@@ -1,4 +1,4 @@
-package tw.com.rex.config;
+package tw.com.rex.controller;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
@@ -19,10 +19,15 @@ import tw.com.rex.controller.ScanController;
  */
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackageClasses = {ScanController.class})
+@ComponentScan
 public class WebConfig extends WebMvcConfigurerAdapter implements ApplicationContextAware {
 
     private ApplicationContext applicationContext;
+
+    public WebConfig() {
+        super();
+        System.out.println("WebConfig()");
+    }
 
     @Override
     public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {

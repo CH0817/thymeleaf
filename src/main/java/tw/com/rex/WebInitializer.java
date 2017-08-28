@@ -2,8 +2,7 @@ package tw.com.rex;
 
 import org.springframework.web.filter.CharacterEncodingFilter;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
-import tw.com.rex.config.RootConfig;
-import tw.com.rex.config.WebConfig;
+import tw.com.rex.controller.WebConfig;
 
 import javax.servlet.Filter;
 
@@ -11,6 +10,11 @@ import javax.servlet.Filter;
  * Initialize Spring Dispatcher
  */
 public class WebInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
+
+    public WebInitializer() {
+        super();
+        System.out.println("WebInitializer()");
+    }
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
